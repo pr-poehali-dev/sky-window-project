@@ -19,6 +19,16 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Sky-themed color palette
+				'sky-blue': '#87CEEB',
+				'steel-blue': '#4682B4', 
+				'pure-blue': '#0F8FF',
+				'dark-slate': '#0F48FF',
+				'cloud-white': '#FFFFFF',
+				'light-gray': '#F8FAFC',
+				'sky-gradient-start': '#87CEEB',
+				'sky-gradient-end': '#4682B4',
+				
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -68,6 +78,10 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+				'heading': ['Montserrat', 'sans-serif'],
+				'body': ['Open Sans', 'sans-serif']
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -84,11 +98,16 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out'
 			}
 		}
 	},
