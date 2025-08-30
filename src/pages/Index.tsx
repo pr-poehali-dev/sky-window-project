@@ -5,8 +5,18 @@ import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 
 export default function Index() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-blue via-steel-blue to-dark-slate">
+    <div className="min-h-screen bg-gradient-to-br from-sky-blue via-steel-blue to-dark-slate scroll-smooth">
       {/* Header */}
       <header className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
@@ -15,10 +25,10 @@ export default function Index() {
               СкайОкна
             </div>
             <div className="hidden md:flex space-x-8 font-body">
-              <a href="#home" className="text-gray-700 hover:text-steel-blue transition-colors">Главная</a>
-              <a href="#services" className="text-gray-700 hover:text-steel-blue transition-colors">Услуги</a>
-              <a href="#about" className="text-gray-700 hover:text-steel-blue transition-colors">О компании</a>
-              <a href="#contacts" className="text-gray-700 hover:text-steel-blue transition-colors">Контакты</a>
+              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-steel-blue transition-colors">Главная</button>
+              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-steel-blue transition-colors">Услуги</button>
+              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-steel-blue transition-colors">О компании</button>
+              <button onClick={() => scrollToSection('contacts')} className="text-gray-700 hover:text-steel-blue transition-colors">Контакты</button>
             </div>
             <Button className="bg-steel-blue hover:bg-dark-slate text-white">
               Заказать звонок
